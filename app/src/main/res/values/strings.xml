@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">IL FORNO</string>
+    <string name="perfil">Mi Perfil</string>
+    <string name="main">Principal</string>
+    <string name="platos">Mis Platos</string>
+    <string name="user">Usuario</string>
+    <string name="cont">Contraseña</string>
+    <string name="acep">Aceptar</string>
+</resources>

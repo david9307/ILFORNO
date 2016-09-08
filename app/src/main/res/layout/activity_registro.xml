@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.davidh.ilforno.RegistroActivity"
+    android:background="@drawable/tabla">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
+
+        >
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Usuario"
+        android:id="@+id/user"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:inputType="textPersonName"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textColorHighlight="@color/white"
+        android:textColorLink="@color/white" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:id="@+id/passw"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColorHighlight="@color/white"
+        android:textColorLink="@color/white" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Repetir Password"
+        android:inputType="textPassword"
+        android:id="@+id/passw2"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColorHighlight="@color/white"
+        android:textColorLink="@color/white" />
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo Electronico"
+        android:id="@+id/email"
+        android:inputType="textEmailAddress"
+        android:textColorHint="@color/white"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:layout_marginTop="20dp"
+        android:textColorHighlight="@color/white"
+        android:textColorLink="@color/white" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:layout_weight="0.3"
+        android:layout_marginTop="10dp"
+
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <Button
+            android:layout_width="133dp"
+            android:layout_height="match_parent"
+            android:hint="Aceptar"
+            android:id="@+id/accept"
+            android:textColorHint="@color/white"
+            android:background="@drawable/madera" />
+
+
+        <Button
+            android:layout_width="126dp"
+            android:layout_height="39dp"
+            android:hint="Cancelar"
+            android:id="@+id/cancel"
+            android:layout_marginLeft="30dp"
+            android:textColorHint="@color/white"
+            android:background="@drawable/madera" />
+
+
+    </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/mostrar"
+            />
+    </LinearLayout>
+
+</LinearLayout>
