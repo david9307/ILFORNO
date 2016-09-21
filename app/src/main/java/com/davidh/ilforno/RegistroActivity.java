@@ -1,13 +1,16 @@
 package com.davidh.ilforno;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -23,6 +26,10 @@ public class RegistroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        this.supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
+
         setContentView(R.layout.activity_registro);
 
         canc=(Button)findViewById(R.id.cancel);
@@ -101,12 +108,12 @@ public class RegistroActivity extends AppCompatActivity {
 
                 if(error==1){
 
-                    mostrar.setText("Uno o mas campos son incorrectos");
+                    Toast.makeText(RegistroActivity.this, "uno o mas campos son incorrectos", Toast.LENGTH_SHORT).show();
 
                 }
                 else{
 
-                    mostrar.setText("Su registro ha sido exitoso");
+
                     Intent i = getIntent();
                     i.putExtra("Email",email.getText().toString());
                     i.putExtra("Usuario",persona.getText().toString());
