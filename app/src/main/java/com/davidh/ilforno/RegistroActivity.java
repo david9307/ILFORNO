@@ -1,6 +1,8 @@
 package com.davidh.ilforno;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -17,7 +19,11 @@ import java.util.regex.Pattern;
 
 public class RegistroActivity extends AppCompatActivity {
 
+    SharedPreferences pref;
+    SharedPreferences.Editor editor;
     Button canc,accept;
+    String name1="Email",name2="Usuario",name3="Password";
+    int num_user;
     TextView mostrar;
     EditText persona,password1,password2,email;
     private static final String PATTERN_EMAIL = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
@@ -31,6 +37,11 @@ public class RegistroActivity extends AppCompatActivity {
         this.supportRequestWindowFeature(Window.FEATURE_NO_TITLE);
 
         setContentView(R.layout.activity_registro);
+
+
+
+
+
 
         canc=(Button)findViewById(R.id.cancel);
         accept=(Button)findViewById(R.id.accept);
@@ -113,7 +124,19 @@ public class RegistroActivity extends AppCompatActivity {
                 }
                 else{
 
-
+                    SharedPreferences prefs = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = prefs.edit();
+                    //num_user = prefs.getInt("numero", 0);
+                    //String num = Integer.toString(num_user);
+                    //String name1p=name1+num;
+                    //String name2p=name2+num;
+                    //String name3p=name3+num;
+                    editor.putString("Email",email.getText().toString());
+                    editor.putString("Usuario",persona.getText().toString());
+                    editor.putString("Password",password1.getText().toString());
+                    //num_user=num_user+1;
+                    //editor.putInt("numero",num_user);
+                    editor.commit();
                     Intent i = getIntent();
                     i.putExtra("Email",email.getText().toString());
                     i.putExtra("Usuario",persona.getText().toString());

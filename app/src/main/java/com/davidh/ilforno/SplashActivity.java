@@ -1,6 +1,8 @@
 package com.davidh.ilforno;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +12,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class SplashActivity extends AppCompatActivity {
+
+    String datos;
 
     private static final long delay =3000;
     @Override
@@ -28,9 +32,22 @@ public class SplashActivity extends AppCompatActivity {
         TimerTask task = new TimerTask() {
             @Override
             public void run() {
-                Intent i = new Intent().setClass(SplashActivity.this,LogginActivity.class);
-                startActivity(i);
-                finish();
+                SharedPreferences prefs = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
+                datos = prefs.getString("Usuario", "nada");
+
+                if (datos.equals("nada")){
+
+                    Intent i = new Intent().setClass(SplashActivity.this,LogginActivity.class);
+                    startActivity(i);
+                    finish();
+                }
+                else{
+                    Intent i = new Intent().setClass(SplashActivity.this,MainActivity.class);
+                    startActivity(i);
+                    finish();
+
+                }
+
             }
         };
 
